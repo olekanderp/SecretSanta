@@ -1,6 +1,9 @@
 Для запуску необхідно
-1. Скачати з Git
-
+1. Скачати з Git архіп за посиланням
+    https://github.com/olekanderp/SecretSanta/archive/refs/heads/main.zip
+    
+    Після скачування розархівувати
+    
 2. В корені проекту ввести команду
     npm install
 
