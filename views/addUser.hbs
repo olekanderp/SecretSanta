@@ -1,0 +1,36 @@
+<div class="row">
+    <form class="col s12" action="/register" method="post">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" name="first_name" type="text" class="validate" required>
+                <label for="first_name">Ім'я</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" name="last_name" type="text" class="validate" required>
+                <label for="last_name">Прізвище</label>
+            </div>
+        </div>
+
+        <div id="newRow" class="col s12">
+            <h5>Список бажать</h5>
+            <div id="inputFormRow" class="col s12">
+                <div class="input-field col s6">
+                    <input id="order-0" type="text" class="validate input-order" name="order[]" required>
+                    <label for="order-0">Бажання 1</label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button id="addRow" type="button" class="btn btn-info">Додати бажання</button>
+
+
+
+
+
+        <button class="btn waves-effect waves-light" type="submit">Замовити
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>

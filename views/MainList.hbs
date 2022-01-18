@@ -1,0 +1,65 @@
+
+<h1>Список гравців</h1>
+<div class="row col s12">
+    <div class="input-field col s6">
+        {{#each user}}
+            <div class="row">
+                <div class="col s12 m6">
+
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">{{name1}}</span>
+                            <span class="card-title">{{name2}}</span>
+                            <p>Santa номер №{{id}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+    <div  class="input-field col s6 center" >
+            <div id="showInfo" hidden>
+                <button type="button" class="btn btn-primary">Перемішати</button>
+            </div>
+            <div id="showInfo2" hidden>
+                <a href="/info" class="waves-effect waves-light btn" style="margin: 20px;" >Взнати кому даруєш</a>
+            </div>
+    </div>
+
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        function blink(){
+
+            var count = $('.card').length;
+            console.log(count)
+            if (count >= 3) {
+                $('#showInfo').show()
+            } else {
+                $('#showInfo').hide()
+            }
+        }
+        setInterval(blink,100);
+
+        $("#showInfo").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "/shuffle",
+                success: function(data){
+                    console.log(data);
+                    $('#showInfo2').show()
+                   // $('#new-game').show()
+                }
+            });
+        });
+
+
+    });
+</script>
+
+

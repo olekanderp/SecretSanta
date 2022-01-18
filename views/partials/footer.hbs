@@ -1,0 +1,29 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    // add row
+    $("#addRow").click(function () {
+        let numberOrder = $('.input-order').length + 1;
+        let html = '';
+        html += `<div id="inputFormRow" class="col s12">
+                    <div class="input-field col s6">
+                        <input id="order-${numberOrder}" type="text" class="validate input-order" name="order[${numberOrder}]">
+                        <label for="order-${numberOrder}">Бажання ${numberOrder}</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                    </div>
+                </div>`
+        if(numberOrder <= 10){
+            $('#newRow').append(html);
+        }
+
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', function () {
+        $(this).closest('#inputFormRow').remove();
+    });
+</script>
+
+
